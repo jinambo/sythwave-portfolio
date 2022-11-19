@@ -1,0 +1,35 @@
+@import 'styles/variables.scss';
+
+.project {
+    // background-color: #18032eda;
+    background-color: $dark;
+    border-radius: 6px;
+    transition: 0.25s all ease-in-out;
+
+    &:hover {
+        background-color: #1c0337;
+    }
+
+    &__thumb {
+        width: 100%;
+        height: auto;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+
+    &__info {
+        padding: 0.75rem 1rem;
+    }
+
+    &__tag {
+        font-size: 0.75rem;
+        padding: 0.125rem 0.5rem;
+        border-radius: 3px;
+        margin-left: 0.4rem;
+        opacity: 0.9;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+}

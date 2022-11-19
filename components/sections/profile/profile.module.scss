@@ -1,0 +1,33 @@
+@import 'styles/variables.scss';
+
+.main {
+    position: relative;
+
+    &__picture {
+        position: inherit;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            // box-shadow: 0 1px 24px rgba(242, 34, 255, 0.75);
+        }
+    }
+
+    &__socials {
+        margin-top: 0.75rem;
+
+        & > img {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            margin-right: 0.75rem;
+            opacity: 0.75;
+            transition: .25s all ease-in-out;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+    }
+}

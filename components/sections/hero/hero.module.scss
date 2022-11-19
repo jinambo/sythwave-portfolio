@@ -1,0 +1,597 @@
+@import 'styles/variables.scss';
+
+// --------------------------
+// HERO SECTION
+// --------------------------
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: 0 0 .25rem $primary,
+        0 0 .25rem $primary,
+        0 0 1.85rem $primary,
+        0 0 0.8rem $primary,
+        0 0 2.8rem $primary,
+        inset 0 0 1.5rem;
+    
+    &__overlay {
+        position: absolute;
+        top: 0; left: 0;
+        z-index: 15;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(34, 2, 36, 0.33);
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.25rem;
+    height: 3.75rem;
+    border-radius: 1rem;
+    border: 4px solid $light;
+    box-shadow: 0 0 0.65rem $light;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        width: 4px;
+        height: 12px;
+        background-color: $light;
+        border-radius: 2px;
+        animation: scroll 1s linear infinite;
+        box-shadow: inherit;
+    }
+}
+
+.moon {
+    position: fixed;
+    z-index: 9;
+    overflow: hidden;
+    top: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(to bottom, #f566ff, #9838ff);
+    border-radius: 50%;
+
+    &__line {
+        position: absolute;
+        width: 160px;
+        height: 30px;
+        background-color: #3b0078;
+        animation: moon 6s linear infinite;
+    }
+}
+
+.stars {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.star {
+    position: absolute;
+    z-index: 3;
+    background-color: $light;
+}
+
+.mountains_wrapper {
+    position: relative;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(#0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100%);
+}
+
+.mountains {
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    width: 100%;
+    height: 55%;
+    // background: linear-gradient(#3c007a 0%, #620bbd 50%, #ff2975 90%, #ffd319 100%);
+    // background: linear-gradient(#0D0221 0%, #45125e 40%, #A22561 80%, #FF3864 100%);
+}
+
+.mountain {
+    position: absolute;
+    background: linear-gradient(#090910 40%, #450547 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    &:nth-child(1) {
+        z-index: 9;
+        width: 30%;
+        height: 50%;
+        inset: auto auto 0 35%;
+    }
+
+    &:nth-child(2) {
+        z-index: 8;
+        width: 25%;
+        height: 30%;
+        inset: auto auto 0 22.5%;
+    }
+
+    &:nth-child(3) {
+        z-index: 8;
+        width: 27.5%;
+        height: 30%;
+        inset: auto auto 0 49.5%;
+    }
+
+    &:nth-child(4) {
+        z-index: 7;
+        width: 35%;
+        height: 22.5%;
+        inset: auto auto 0 5%;
+    }
+
+    &:nth-child(5) {
+        z-index: 7;
+        width: 35%;
+        height: 20%;
+        inset: auto auto 0 60%;
+    }
+
+    &:nth-child(6) {
+        z-index: 6;
+        width: 35%;
+        height: 15%;
+        inset: auto auto 0 -10%;
+    }
+
+    &:nth-child(7) {
+        z-index: 6;
+        width: 35%;
+        height: 13%;
+        inset: auto auto 0 77.5%;
+    }
+}
+
+.land {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    background: #3b0078;
+    perspective: 55vh;
+    box-shadow: 0 0 .25rem $primary,
+        0 0 .25rem $primary,
+        0 0 1rem $primary,
+        0 0 0.8rem $primary,
+        0 0 2.8rem $primary,
+        inset 0 0 1.5rem;
+}
+
+.lines {
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(242, 34, 255, 0.2) 40px, $primary 40px, $primary 42px), linear-gradient(to right, transparent, rgba(242, 34, 255, 0.2) 40px, $primary 40px, $primary 42px);
+    transform-origin: 50% 0;
+    transform: rotateX(60deg);
+    background-size: 42px 42px;
+    animation: move-up 14s linear infinite;
+    // filter: blur(2px);
+}
+
+.heading {
+    z-index: 99;
+    position: absolute;
+    bottom: 27.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    opacity: 0.65;
+}
+
+.paralax_title {
+    position: absolute;
+    left: 50%;
+    bottom: -20%;
+    transform: translate(-50%, -50%);
+}
+
+.fade_out {
+    -webkit-animation: fade-out 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        animation: fade-out 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+// --------------------------
+// ANIMATIONS
+// --------------------------
+@keyframes scroll {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(6px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 0.65;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes move-up {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -100%;
+    }
+}
+
+@keyframes moon {
+    5% {
+        background: #45125e;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        background: #A22561;
+    }
+
+    100% {
+        height: 4vh;
+        background: #E03263;
+        transform: translateY(40vh);
+    }
+}
+
+
+/* ----------------------------------------------
+   * Generated by Animista on 2022-10-31 11:28:31
+   * Licensed under FreeBSD License.
+   * See http://animista.net/license for more info. 
+   * w: http://animista.net, t: @cssanimista
+   * ---------------------------------------------- */
+
+/**
+   * ----------------------------------------
+   * animation text-flicker-in-glow
+   * ----------------------------------------
+   */
+   @-webkit-keyframes text-flicker-in-glow {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    10.1% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    10.2% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    20% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    20.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    }
+
+    20.6% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    30% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    30.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    30.5% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    30.6% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    45% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    45.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    55% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    55.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    57% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    57.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+
+    60% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+
+    60.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    65% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    65.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    75% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    75.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    77% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    77.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    85% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    85.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    86% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    86.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+}
+
+@keyframes text-flicker-in-glow {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    10.1% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    10.2% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    20% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    20.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    }
+
+    20.6% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    30% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    30.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    30.5% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    30.6% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    45% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    45.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    55% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+
+    55.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    57% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    57.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+
+    60% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+
+    60.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    65% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    65.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    75% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    75.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    77% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    77.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    85% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    85.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    86% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    86.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+}

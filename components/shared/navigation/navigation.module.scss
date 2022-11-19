@@ -1,0 +1,31 @@
+@import 'styles/variables.scss';
+
+.navigation {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: .33s all ease-in-out;
+
+    &__item {
+        margin-right: 1.5rem;
+        color: $secondary;
+        font-weight: bold;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
+
+    &__logo {
+        font-size: 1.25rem;
+        font-weight: bold;
+        letter-spacing: 0.15rem;
+    }
+}
+
+.scrolled {
+    background-color: $tertiary-dark;
+    box-shadow: 0 0 0.1rem $primary;
+}

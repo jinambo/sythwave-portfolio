@@ -1,0 +1,49 @@
+@import 'styles/variables.scss';
+
+.panel {
+    z-index: 16;
+    
+    &__item {
+        width: calc(100% / 3);
+        text-align: center;
+        transition: .25s all ease-in-out;
+        border-radius: 6px;
+
+        img {
+            max-width: 140px;
+            height: auto;
+        }
+    }
+
+    &__item_active {
+        transform: scale(1.0725);
+        background-color: $primary;
+
+        ::selection {
+            background-color: $tertiary;
+        }
+    }
+
+}
+
+@media (max-width: 33.75em) { // 540px
+    .panel__item {
+        width: 100%;
+    }
+
+    .panel__item_active {
+        transform: scale(1);
+    }
+} 
+
+@media (min-width: 120em) {  // 1920px
+    .panel__item {
+        padding: 5rem 7.5rem;
+    }
+}
+
+@media (min-width: 160em) {  // 2560px
+    .panel__item {
+        padding: 8rem 10rem;
+    }
+}

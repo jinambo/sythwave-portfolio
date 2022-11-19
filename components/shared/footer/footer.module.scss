@@ -1,0 +1,15 @@
+@import 'styles/variables.scss';
+
+.footer {
+    position: relative;
+
+    &__bottom {
+        text-align: right;
+    }
+}
+
+@media (max-width: 33.75rem) {
+    .footer__bottom {
+        text-align: center;
+    }
+}

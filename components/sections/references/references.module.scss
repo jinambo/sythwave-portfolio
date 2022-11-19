@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+
+.references {
+    position: relative;
+
+    &__prev {
+        transform: rotate(180deg);
+    }
+
+    &__prev, &__next {
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        opacity: 0.875;
+        transition: 0.25s all ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.reference {
+    cursor: grab;
+
+    &__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__client {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: $tertiary;
+    }
+}

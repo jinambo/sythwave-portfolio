@@ -1,0 +1,494 @@
+// --------------------------
+// IMPORTS, CONFIG VARIABLES
+// --------------------------
+@import './variables.scss', './spacing.scss', './flex.scss';
+
+$spacingLevels: 8;
+$flexLevels: 6; // For flex grow, shrink and basis property
+$colLg: 992px;
+$colMd: 768px;
+$colSm: 576px;
+
+@include SpacingAll($colLg, $colMd, $colSm);
+@include Flex();
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: $dark;
+}
+
+body, html {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+::selection {
+    background: $primary;
+}
+
+// --------------------------
+// COMPONENTS
+// --------------------------
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 0.75rem 1rem;
+    min-width: 150px;
+    font-weight: bold;
+    color: $light;
+    border: 2px solid $primary;
+    border-radius: 4px;
+    transition: .25s all ease-in-out;
+    box-shadow: 0 0 1rem $primary;
+    letter-spacing: 0.5px;
+
+    span {
+        font-size: 1rem;
+    }
+
+    svg path {
+        transition: inherit;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 100%;
+        height: 100%;
+        border-right: 2px solid $primary;
+        border-bottom: 2px solid $primary;
+        border-radius: 4px;
+        transition: inherit;
+        z-index: -1;
+    }
+
+    &:hover {
+        &::after {
+            top: 0;
+            left: 0;
+        }
+    }
+    
+    &--bg {
+        background-color: $primary;
+
+        &:hover {
+            background-color: transparent;
+            color: $primary;
+            svg path {
+                fill: $primary;
+            }
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        color: $primary;
+
+        svg path {
+            fill: $primary;
+        }
+
+        &:hover {
+            background-color: $primary;
+            color: $light;
+
+            svg path {
+                fill: $light;
+            }
+        }
+    }
+}
+
+// Text components
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    color: $secondary;
+}
+
+.section-title {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.825rem;
+    font-weight: bold;
+    opacity: 0.875;
+
+    &::before {
+        content: '';
+        width: 20px;
+        height: 2px;
+        margin-right: 0.75rem;
+        background-color: $secondary;
+    }
+}
+
+.tiny-text {
+    font-size: 1.125rem;
+    opacity: 0.75;
+    margin-right: 0.5rem;
+}
+
+.large-text {
+    font-size: 3.5rem;
+}
+
+.medium-text {
+    font-size: 2.25rem;
+}
+
+.shiny-text-secondary {
+    display: inline-block;
+    transform: skew(0);
+    text-shadow: 0 0 0.5rem $secondary;
+    animation: shine-text 6s linear infinite;
+}
+
+.shiny-text-light {
+    text-shadow: 0 0 0.6rem $light;
+}
+
+// Lists
+.list {
+    list-style: none;
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: '';
+            width: 1rem;
+            height: 1px;
+            margin: 0 1rem;
+            background-color: $secondary;
+        }
+
+        &:nth-last-child(1) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    margin: 0 3.5rem;
+    background-color: $secondary;
+}
+
+// Link
+.link {
+    position: relative;
+    color: $secondary;
+    font-weight: 400;
+    opacity: 0.9;
+    transition: all .33s ease-in-out;
+
+    &::after {
+        content: url(../public/arrow.svg);
+        position: relative;
+        display: inline-block;
+        transform: translateX(7px);
+        transition: inherit;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &::after {
+            transform: translateX(11px);
+        }
+    }
+
+    &--lg {
+        font-size: 1.25rem;
+    }
+}
+
+// BGs & FGs
+.bg-primary {
+    background-color: $primary;
+}
+
+.bg-secondary {
+    background-color: $secondary;
+}
+
+.bg-tertiary {
+    background-color: $tertiary;
+}
+
+.bg-tertiary-dark {
+    background-color: $tertiary-dark;
+}
+
+.bg-light {
+    background-color: $light;
+}
+
+.bg-dark {
+    background-color: $dark;
+}
+
+.fg-primary {
+    color: $primary;
+}
+
+.fg-secondary {
+    color: $secondary;
+}
+
+.fg-tertiary {
+    color: $tertiary;
+}
+
+.fg-light {
+    color: $light;
+}
+
+.fg-dark {
+    color: $dark;
+}
+
+// RADIUSES
+.radius {
+    border-radius: 6px;
+}
+
+// SPECIAL MARGINS
+.row-m-t [class^=col] {
+    margin-top: 1.65rem !important;
+}
+
+// SPECIAL BORDER HIGHLIGHTER
+.special-border {
+    position: relative;
+
+    &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: -8px;
+        left: -9px;
+        width: 100%;
+        height: 100%;
+        border-left: 2px solid $primary;
+        border-top: 2px solid $primary;
+        border-radius: 6px;
+    }
+}
+
+// --------------------------
+// SECTION
+// --------------------------
+section {
+    position: relative;
+    z-index: 10;
+    color: $light;
+}
+
+// Carousel
+.alice-carousel__stage-item {
+    padding: 0.5rem 0 !important;
+}
+
+.alice-carousel__dots-item {
+    margin-top: 1rem;
+    width: 24px !important;
+    height: 3px !important;
+    border-radius: 0 !important;
+    background-color: #550f5a !important;
+}
+
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active {
+    background-color: $primary !important;
+}
+
+.alice-carousel__dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: auto !important;
+}
+
+.alice-carousel__prev-btn {
+    left: -4rem;
+}
+
+.alice-carousel__next-btn {
+    right: -4rem;
+}
+
+.alice-carousel__stage-item * {
+    line-height: 1.7 !important;
+}
+
+// Text components
+.flicker-title {
+    font-family: sans-serif;
+    font-size: 92px;
+    color: $light;
+    -webkit-animation: text-flicker-in-glow 4s linear both;
+    animation: text-flicker-in-glow 4s linear both;
+}
+
+// --------------------------
+// FORMS AND INPUTS
+// --------------------------
+.form {
+    text-align: right;
+
+    &__input {
+        text-align: left;
+    }
+
+    .btn {
+        margin: 1.5rem 2%;
+    }
+}
+
+.label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: $secondary;
+    opacity: 0.75;
+    margin-top: 0.33rem;
+}
+
+.input {
+    resize: none;
+    outline: none;
+    padding: 0.75rem 1.25rem;
+    margin-top: 0.35rem !important;
+    // border: 1px solid $primary;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0.1rem $primary;
+    background-color: $dark;
+    color: $light;
+}
+
+select.input {
+    border-right: 1.25rem outset transparent;
+}
+
+.dot {
+    position: relative;
+    border-radius: 50%;
+
+    &__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: green;
+        border-radius: inherit;
+    }
+
+    &__outer {
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid green;
+        border-radius: inherit;
+        animation: blink 1.85s linear infinite;
+    }
+}
+
+// --------------------------
+// ANIMATIONS
+// --------------------------
+
+@keyframes blink {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    95% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shine-text {
+    0% {
+        text-shadow: 0 0 0.35rem $secondary;
+        transform: skew(0);
+    }
+    33% {
+        text-shadow: 0 0 1rem $secondary;
+        transform: skew(2.5deg);
+    }
+    66% {
+        text-shadow: 0 0 1rem $secondary;
+        transform: skew(-2.5deg);
+    }
+    100% {
+        text-shadow: 0 0 0.35rem $secondary;
+        transform: skew(0);
+    }
+}
+
+@media (max-width: 60em) { 
+    .alice-carousel__prev-btn,
+    .alice-carousel__next-btn {
+        display: none !important;
+    }  
+    
+    .alice-carousel__dots {
+        margin: 10px 3px 5px !important;
+    }
+}
+
+@media (max-width: 33.75rem) {
+    .list {
+        flex-direction: column;
+    }
+
+    .list__item {
+        flex-direction: column;
+        
+        &::after {
+            margin: 0.5rem 0;
+        }
+    }
+}

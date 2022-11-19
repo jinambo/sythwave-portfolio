@@ -1,0 +1,79 @@
+@import 'styles/variables.scss';
+
+.nevyhasni {
+    background-color: #f2f9ef;
+    border-radius: 6px;
+    
+    &__inner {
+        position: relative;
+        overflow: hidden;
+    }
+
+    * {
+        font-family: 'basic-sans', sans-serif;
+    }
+
+    &__tiny {
+        color: #FF7E5F;
+    }
+
+    &__title {
+        font-size: 4.25rem;
+        font-weight: 600;
+        color: #000;
+        line-height: 1.125;
+        font-style: italic;
+    }
+
+    &__btn {
+        cursor: pointer;
+        font-family: 'novecento-sans', sans-serif;
+        position: relative;
+        display: inline-block;
+        border: none;
+        border-radius: 0.45rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        padding: 0.75rem 2rem;
+        transition: all .25s ease-in-out;
+        background-color: #feb47b;
+        color: $light;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -6px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #1a1a1a;
+            border-radius: inherit;
+            transition: inherit;
+        }
+
+        &:hover {
+            background-color: #739160;
+            transform: translate(2px,2px);
+            
+            &::before {
+                top: -8px;
+                left: -10px;
+            }
+        }
+    }
+
+    &__curve {
+        position: absolute;
+        bottom: 0;
+        left: -3.5rem;
+    }
+
+    &__image {
+        text-align: right;
+
+        img {
+            width: 90%;
+            height: auto;
+        }
+    }
+}

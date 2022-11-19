@@ -6,9 +6,10 @@ import ReferenceVaclav from 'public/vaclavpetr_foto.png'
 import ReferenceDavid from 'public/david_foto.jpeg'
 import ArrowCyber from 'public/arrow_cyber.svg'
 
+import Reference from './reference'
+
 import 'react-alice-carousel/lib/alice-carousel.css'
 import styles from './references.module.scss'
-import Reference from './reference'
 
 const References = () => {
   const AliceCarousel = dynamic(() => import('react-alice-carousel'), { ssr: false })

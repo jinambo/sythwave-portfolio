@@ -35,12 +35,16 @@ const Profile = () => {
                 <p className="subtitle">FRONTEND DEVELOPER & WEBDESIGNER</p>
 
                 <div className={`${ styles.main__socials } flex`}>
-                  <Image alt="Jiří Šrytr" src={ IconLi } />
-                  <Image alt="Jiří Šrytr" src={ IconGit } />
+                  <Link href="https://www.linkedin.com" target="_blank">
+                    <Image alt="Jiří Šrytr" src={ IconLi } />
+                  </Link>
+                  <Link href="https://github.com/jinambo" target="_blank">
+                    <Image alt="Jiří Šrytr" src={ IconGit } />
+                  </Link>
                 </div>
 
                 <p className="m-t-2">
-                  Jsem 22 letý student softwarového inženýrství a vývojář webových a mobilních aplikacích zaměřující se primárně na frontend a práci s API, ani backend mi však není cizí. Věnuji se také návrhu designu aplikací.
+                  Jsem 22 letý student softwarového inženýrství a vývojář webových a mobilních aplikacích zaměřující se primárně na frontend a práci s API, ani backend mi však není cizí. Věnuji se také designu webů a aplikací.
                 </p>
               </div>
 

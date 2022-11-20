@@ -13,7 +13,7 @@ const Navigation = ({ scrolled }) => {
     <nav className={`${ styles.navigation } p-y-1 ${ scrolled && styles.scrolled }`}>
         <div className="container-lg">
           <div className="row flex flex-wrap align-items-center">
-            <div className={`col-6 fg-primary ${ styles.navigation__top } flex align-items-center justify-content-between`}>
+            <div className={`col-4 fg-primary ${ styles.navigation__top } flex align-items-center justify-content-between`}>
               <p className={`${ styles.navigation__logo  } shiny-text-light`}>
                 JIŘÍ ŠRYTR
               </p>
@@ -23,7 +23,7 @@ const Navigation = ({ scrolled }) => {
               </div>
             </div>
             <ul className={`
-              col-6 list flex
+              col-8 list flex
               align-items-center justify-content-end
               ${ styles.navigation__menu }
               ${ toggle && styles.active }

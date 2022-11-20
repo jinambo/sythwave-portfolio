@@ -12,7 +12,9 @@ const Navigation = ({ scrolled }) => {
         <div className="container-lg">
           <div className="row flex flex-wrap align-items-center">
             <div className="col-6 fg-primary">
-              <p className={ styles.navigation__logo }>JIŘÍ ŠRYTR</p>
+              <p className={`${ styles.navigation__logo  } shiny-text-light`}>
+                JIŘÍ ŠRYTR
+              </p>
             </div>
             <ul className="col-6 list flex align-items-center justify-content-end">
               <li>

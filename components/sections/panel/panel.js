@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 import IconWeb from 'public/web.svg'
-import IconMobile from 'public/mobile.svg'
+import IconMobile from 'public/phone.svg'
 import IconDesign from 'public/design.svg'
 
 import styles from './panel.module.scss'

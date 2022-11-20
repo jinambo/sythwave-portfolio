@@ -22,12 +22,7 @@ const Navigation = ({ scrolled }) => {
                 <span></span>
               </div>
             </div>
-            <ul className={`
-              col-8 list flex
-              align-items-center justify-content-end
-              ${ styles.navigation__menu }
-              ${ toggle && styles.active }
-            `}>
+            <ul className={`col-8 list flex align-items-center justify-content-end ${ styles.navigation__menu } ${ toggle && styles.active }`}>
               <li>
                 <Link
                   onClick={ () => setToggle(!toggle) }

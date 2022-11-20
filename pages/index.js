@@ -36,19 +36,18 @@ export default function Home() {
         <link rel="icon" href="/fav.png" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" />
         <link rel="stylesheet" href="https://use.typekit.net/zab6eql.css" />
-
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-L8D9W22GYC" strategy="afterInteractive"></Script>
-        <Script id="google-analytics" strategy='afterInteractive'>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-L8D9W22GYC');
-          `}
-        </Script>
       </Head>
 
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-L8D9W22GYC" strategy="afterInteractive"></Script>
+      <Script id="google-analytics" strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-L8D9W22GYC');
+        `}
+      </Script>
 
 
       <Navigation scrolled={ scrolled } />

@@ -216,6 +216,13 @@
         animation: fade-out 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
+@media (max-width: 33.75rem) { // 540px
+    .mountains_wrapper {
+        display: none;
+    }
+}
+
+
 // --------------------------
 // ANIMATIONS
 // --------------------------

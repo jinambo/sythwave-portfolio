@@ -479,7 +479,7 @@ select.input {
     }
 }
 
-@media (max-width: 33.75rem) {
+@media (max-width: 33.75rem) { // 540px
     .list {
         flex-direction: column;
     }
@@ -490,5 +490,9 @@ select.input {
         &::after {
             margin: 0.5rem 0;
         }
+    }
+
+    .large-text {
+        line-height: 1.175;
     }
 }

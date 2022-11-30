@@ -62,7 +62,7 @@ const Profile = () => {
                   </svg>
                   <span className="m-l-1">Životopis</span>
                 </Link> */}
-                <Link href="#kontakt" className="btn btn--transparent flex align-items-center justify-content-center m-l-2">Napište mi</Link>
+                <Link href="#kontakt" className="btn btn--transparent flex align-items-center justify-content-center m-l-0">Napište mi</Link>
               </div>
             </div>
           </div>

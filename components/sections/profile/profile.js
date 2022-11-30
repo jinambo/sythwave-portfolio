@@ -49,7 +49,7 @@ const Profile = () => {
               </div>
 
               <div className="flex center m-t-3">
-                <Link href="CV.pdf" target="_blank" className="btn btn--bg flex align-items-center justify-content-center">
+                {/* <Link href="CV.pdf" target="_blank" className="btn btn--bg flex align-items-center justify-content-center">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.6448 8.71006C13.6962 8.63799 13.7162 8.59178 13.7241 8.56695C13.6817 8.54454 13.6255 8.49902 13.319 8.49902C13.1448 8.49902 12.9262 8.50661 12.6945 8.53626C12.9755 8.75247 13.0441 8.86178 13.2279 8.86178C13.3083 8.86213 13.5386 8.85868 13.6448 8.71006Z" fill="white"/>
                     <path d="M7.08141 11.2531C7.13279 11.2369 7.43279 11.1 7.99176 10.0682C7.25452 10.4824 6.95452 10.8227 6.93314 11.0144C6.92934 11.0462 6.92003 11.1296 7.08141 11.2531Z" fill="white"/>
@@ -61,7 +61,7 @@ const Profile = () => {
                     <path d="M9.90897 3.34892C9.87518 3.3603 9.45035 3.95478 9.94208 4.45789C10.2693 3.72858 9.9238 3.34409 9.90897 3.34892Z" fill="white"/>
                   </svg>
                   <span className="m-l-1">Životopis</span>
-                </Link>
+                </Link> */}
                 <Link href="#kontakt" className="btn btn--transparent flex align-items-center justify-content-center m-l-2">Napište mi</Link>
               </div>
             </div>

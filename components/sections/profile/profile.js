@@ -44,7 +44,7 @@ const Profile = () => {
                 </div>
 
                 <p className="m-t-2">
-                  Jsem 22 letý student softwarového inženýrství a vývojář webových a mobilních aplikacích zaměřující se primárně na frontend a práci s API, ani backend mi však není cizí. Věnuji se také designu webů a aplikací.
+                  Jsem 23 letý student softwarového inženýrství a vývojář webových a mobilních aplikacích zaměřující se primárně na frontend, ani backend mi však není cizí. Věnuji se také designu webů a aplikací.
                 </p>
               </div>
 

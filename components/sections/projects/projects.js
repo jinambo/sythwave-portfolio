@@ -67,7 +67,7 @@ const Projects = () => {
           <div className="row">
             <div className="col-12">
               <p className="section-title fg-secondary">MOJE PROJEKTY</p>
-              <p className="title m-t-1">Projekty, které jsem za dobu působení v oboru tvořil <br /> a na které jsem hrdý</p>
+              <p className="title m-t-1">Projekty, na kterých jsem poslední dobou pracoval <br /> a na které jsem hrdý</p>
             </div>
           </div>
 
@@ -93,9 +93,9 @@ const Projects = () => {
             )) }
           </div>
 
-          <div className="m-t-3 center">
+          {/* <div className="m-t-3 center">
             <Link href="#" className="link link--lg">Zobrazit více projektů</Link>
-          </div>
+          </div> */}
 
         </div>
       </section>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 import ReferenceVaclav from 'public/vaclavpetr_foto.png'
-import ReferenceDavid from 'public/david_foto.jpeg'
+import ReferenceDavid from 'public/davidfiedler_foto.png'
 import ArrowCyber from 'public/arrow_cyber.svg'
 
 import Reference from './reference'
@@ -21,7 +21,13 @@ const References = () => {
       client: 'Václav Petr, vaclavpetr.cz',
       picture: ReferenceVaclav,
       text: 'S Jirkou se spolupracuje výborně a web vytvoří přesně tak, jak je domluveno a navrhnuto. A to s perfektním výsledkem. Je zkušený a se vším si poradí.'
-    }
+    },
+    {
+      id: 2,
+      client: 'David Artur Fiedler, contentano.com',
+      picture: ReferenceDavid,
+      text: 'Jirka je profesionál, na kterého je spoleh. Rád se nad projekty zamýšlí komplexně, proaktivně pokládá důležité otázky a přemýšlí na řešeními. Ideální parťák pro spolupráci!'
+    },
   ]
 
   return (

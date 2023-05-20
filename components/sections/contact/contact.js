@@ -55,7 +55,7 @@ const Contact = () => {
 
             <div className="col-6 form__input flex flex-column">
               <label className="label" htmlFor={`${id}-fullname1`}>Vaše celé jméno</label>
-              <input id={`${id}-fullname1`} name="fullname" className="input" type="text" placeholder="Karel Novotný" required />
+              <input id={`${id}-fullname1`} name="fullname" className="input" type="text" placeholder="Karel Novák" required />
             </div>
 
             <div className="col-6 form__input flex flex-column">
@@ -77,7 +77,7 @@ const Contact = () => {
 
             <div className="col-12 form__input flex flex-column">
               <label className="label" htmlFor={`${id}-message1`}>Zpráva</label>
-              <textarea id={`${id}-message1`} name="message" className="input" cols="30" rows="10" placeholder="Ahoj Jirko, chtěl bych se domluvit na .." required></textarea>
+              <textarea id={`${id}-message1`} name="message" className="input" cols="30" rows="10" placeholder="Ahoj Jirko, chci se domluvit na ..." required></textarea>
             </div>
           </div>
 

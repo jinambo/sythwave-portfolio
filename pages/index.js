@@ -48,8 +48,8 @@ export default function Home() {
           gtag('config', 'G-L8D9W22GYC');
         `}
       </Script> */}
-      <Script src="https://getinsights.io/js/insights.js"></Script>
-      <Script id="insights">{`
+      <Script async src="https://getinsights.io/js/insights.js" strategy="afterInteractive"></Script>
+      <Script id="insights-analytics" strategy="afterInteractive">{`
           insights.init('Pit0_c640ubInLCC');
           insights.trackPages();
       `}</Script>
@@ -65,7 +65,6 @@ export default function Home() {
       <Contact />
 
       <Footer />
-
     </>
   )
 }

@@ -49,7 +49,7 @@ export default function Home() {
         `}
       </Script> */}
       <Script src="https://getinsights.io/js/insights.js"></Script>
-      <Script>{`
+      <Script id="insights">{`
           insights.init('Pit0_c640ubInLCC');
           insights.trackPages();
       `}</Script>

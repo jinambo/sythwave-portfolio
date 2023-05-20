@@ -38,7 +38,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://use.typekit.net/zab6eql.css" />
       </Head>
 
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-L8D9W22GYC" strategy="afterInteractive"></Script>
+      {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-L8D9W22GYC" strategy="afterInteractive"></Script>
       <Script id="google-analytics" strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
@@ -47,7 +47,12 @@ export default function Home() {
 
           gtag('config', 'G-L8D9W22GYC');
         `}
-      </Script>
+      </Script> */}
+      <Script src="https://getinsights.io/js/insights.js"></Script>
+      <Script>{`
+          insights.init('Pit0_c640ubInLCC');
+          insights.trackPages();
+      `}</Script>
 
 
       <Navigation scrolled={ scrolled } />

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
 
+import { init, trackPages } from 'insights-js'
+
 // Components
 import Navigation from 'components/shared/navigation'
 import Hero from 'components/sections/hero'
@@ -28,6 +30,11 @@ export default function Home() {
     }
   }, [setScrolled])
 
+  useEffect(() => {
+    init('Pit0_c640ubInLCC');
+    trackPages();
+  }, []);
+
   return (
     <>
       <Head>
@@ -48,12 +55,6 @@ export default function Home() {
           gtag('config', 'G-L8D9W22GYC');
         `}
       </Script> */}
-      <Script async src="https://getinsights.io/js/insights.js" strategy="afterInteractive"></Script>
-      <Script id="insights-analytics" strategy="afterInteractive">{`
-          insights.init('Pit0_c640ubInLCC');
-          insights.trackPages();
-      `}</Script>
-
 
       <Navigation scrolled={ scrolled } />
 
